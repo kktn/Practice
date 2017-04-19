@@ -37,27 +37,31 @@ def verify_linkedlist(head_node):
         print("data: {0}".format(node.data))
         node = node.next
 
-head_node = Node(data=1)
-for data in range(2, 10):
-    head_node.append_to_tail(data)
-head_node.append_to_tail(2)
+def main():
+    head_node = Node(data=1)
+    for data in range(2, 10):
+        head_node.append_to_tail(data)
+    head_node.append_to_tail(2)
 
-# Verify Delete
-print("Before delete")
-verify_linkedlist(head_node)
-# normal case
-print("Will delete 4")
-head_node = head_node.delete_node(head_node, 4)
-verify_linkedlist(head_node)
-# can't find the node
-print("Will delete 20 (List doesn't have 20.)")
-head_node = head_node.delete_node(head_node, 20)
-verify_linkedlist(head_node)
-# delete head node
-print("Will delete 1")
-head_node = head_node.delete_node(head_node, 1)
-verify_linkedlist(head_node)
-# delet 2 nodes
-print("Will delete 2")
-head_node = head_node.delete_node(head_node, 2)
-verify_linkedlist(head_node)
+    # Verify Delete
+    print("Before delete")
+    verify_linkedlist(head_node)
+    # normal case
+    print("Will delete 4")
+    head_node = head_node.delete_node(head_node, 4)
+    verify_linkedlist(head_node)
+    # can't find the node
+    print("Will delete 20 (List doesn't have 20.)")
+    head_node = head_node.delete_node(head_node, 20)
+    verify_linkedlist(head_node)
+    # delete head node
+    print("Will delete 1")
+    head_node = head_node.delete_node(head_node, 1)
+    verify_linkedlist(head_node)
+    # delet 2 nodes
+    print("Will delete 2")
+    head_node = head_node.delete_node(head_node, 2)
+    verify_linkedlist(head_node)
+
+if __name__ == "__main__":
+    main()
